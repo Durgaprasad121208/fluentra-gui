@@ -90,6 +90,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
       <Layout className={`fl-workspace-container ${isCollapsed ? 'is-sidebar-collapsed' : ''}`}>
         {/* Top Header Bar */}
         <Header
+          userRole={activeUserRole}
           roleBadgeText={`FLUENTRALABS ${activeUserRole.toUpperCase()}`}
           userInitials={activeUserInitials}
           isSidebarCollapsed={isCollapsed}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Layout, Tooltip } from 'antd';
-import { DownOutlined, RightOutlined, SwapOutlined } from '@ant-design/icons';
-import { menuSections, MenuItem } from '../../data/menuConfig';
+import { ChevronDown, ChevronRight, ArrowLeftRight } from 'lucide-react';
+import { getMenuSectionsForRole, MenuItem } from '../../data/menuConfig';
 import fluentraLogo from '../../assets/logo-COZPA0E_.svg';
 import './Sidebar.css';
 
@@ -38,6 +38,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const isCollapsed = collapsed;
   const [selectedKey, setSelectedKey] = useState<string>(activeKey);
   const [openSubmenus, setOpenSubmenus] = useState<Record<string, boolean>>({});
+
+  const currentMenuSections = getMenuSectionsForRole(userRole);
 
   React.useEffect(() => {
     if (activeKey) {
@@ -82,7 +84,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {item.badge !== undefined && <span className="sider-badge">{item.badge}</span>}
         {!isCollapsed && hasChildren && (
           <span className="submenu-arrow" onClick={(e) => toggleSubmenu(item.key, e)}>
-            {isOpen ? <DownOutlined /> : <RightOutlined />}
+            {isOpen ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
           </span>
         )}
       </div>
@@ -136,7 +138,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
       {/* Navigation Menu */}
       <div className="sider-menu-container">
-        {menuSections.map((section) => {
+        {currentMenuSections.map((section) => {
           const visibleItems = section.items;
           if (visibleItems.length === 0) return null;
 
@@ -159,7 +161,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           onClick={onSwitchPortal}
           title={isCollapsed ? portalSwitchLabel : undefined}
         >
-          <SwapOutlined className="switch-portal-icon" />
+          <ArrowLeftRight size={14} className="switch-portal-icon" />
           {!isCollapsed && <span>{portalSwitchLabel}</span>}
         </button>
       </div>

@@ -10,6 +10,7 @@ import { Spin, Card, Breadcrumb } from 'antd';
 import MainLayout from './components/layout/MainLayout';
 import { ThemeProvider } from './theme/ThemeContext';
 import NotificationProvider from './common/NotificationProvider';
+import { PlatformDashboard } from './pages/PlatformDashboard/PlatformDashboard';
 import './App.css';
 
 // Page Loader Fallback Component
@@ -92,12 +93,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/dashboard',
-        element: (
-          <PagePlaceholder
-            title="Platform Dashboard"
-            subtitle="Real-time system overview and high-level platform metrics."
-          />
-        ),
+        element: <PlatformDashboard />,
       },
       // Customers
       {

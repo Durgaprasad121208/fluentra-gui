@@ -44,11 +44,11 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     localStorage.setItem('app_theme', themeMode);
     document.documentElement.setAttribute('data-theme', themeMode);
     if (isDarkMode) {
-      document.body.classList.add('dark-theme');
-      document.body.classList.remove('light-theme');
+      document.body.classList.add('dark-theme', 'dark');
+      document.body.classList.remove('light-theme', 'light');
     } else {
-      document.body.classList.add('light-theme');
-      document.body.classList.remove('dark-theme');
+      document.body.classList.add('light-theme', 'light');
+      document.body.classList.remove('dark-theme', 'dark');
     }
   }, [themeMode, isDarkMode]);
 

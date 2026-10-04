@@ -1,10 +1,11 @@
 /* Fluentra Main Layout Styles */
 .fl-app-frame.ant-layout {
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: row;
   background: var(--bg-base, #0d171f);
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /* Inner Workspace Layout */
@@ -12,10 +13,11 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
   min-width: 0;
   background: var(--bg-base, #0d171f);
-  transition: margin-left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 }
 
 /* Page Viewport Area */
@@ -23,6 +25,7 @@
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
+  height: calc(100vh - 56px);
   padding: 24px;
   background: var(--bg-base, #0d171f);
   color: var(--text-primary, #f1f5f9);

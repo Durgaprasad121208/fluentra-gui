@@ -147,9 +147,13 @@ body.light-theme,
 
 /* Global HTML & Body Resets */
 html,
-body {
+body,
+#root {
+  height: 100%;
+  max-height: 100vh;
   margin: 0;
   padding: 0;
+  overflow: hidden;
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
   background-color: var(--bg-base);

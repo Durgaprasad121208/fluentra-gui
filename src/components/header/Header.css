@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Header Component Styles - Compact Height & Refined Typography
+   Header Component Styles - Dual Support (Control Plane & Client Portal)
    ========================================================================== */
 
 .app-header.ant-layout-header {
@@ -8,6 +8,9 @@
   z-index: 99;
   width: 100%;
   height: 56px;
+  min-height: 56px;
+  max-height: 56px;
+  flex-shrink: 0;
   line-height: normal;
   padding: 0;
   background: var(--bg-header, #ffffff) !important;
@@ -37,7 +40,7 @@
   min-width: 0;
 }
 
-/* Left Section: Sidebar Toggle, Divider, Role Badge & Search */
+/* Left Section */
 .header-left-section {
   display: flex;
   align-items: center;
@@ -46,31 +49,31 @@
   min-width: 0;
 }
 
-/* Sidebar Toggle / Closer Button */
+/* Sidebar Toggle Button */
 .sidebar-toggle-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   padding: 0;
   background: transparent;
   border: 1px solid transparent;
   border-radius: 6px;
   cursor: pointer;
-  color: #64748b;
+  color: var(--text-muted, #64748b);
   transition: all 0.15s ease-in-out;
   flex-shrink: 0;
 }
 
 .sidebar-toggle-btn:hover {
-  background-color: #f1f5f9;
-  color: #0f172a;
-  border-color: #e2e8f0;
+  background-color: var(--bg-hover, #f1f5f9);
+  color: var(--text-primary, #0f172a);
+  border-color: var(--border-color, #e2e8f0);
 }
 
 .sidebar-toggle-btn:active {
-  background-color: #e2e8f0;
+  background-color: var(--border-color, #e2e8f0);
 }
 
 .sidebar-toggle-btn.is-collapsed .sidebar-toggle-icon {
@@ -89,6 +92,10 @@
   flex-shrink: 0;
 }
 
+/* ==========================================================================
+   CONTROL PLANE HEADER ELEMENTS
+   ========================================================================== */
+
 /* Role Pill Badge */
 .role-pill-container {
   display: inline-flex;
@@ -99,7 +106,7 @@
   border-radius: 6px;
   padding: 4px 10px;
   color: #16a34a;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-family-base);
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -119,8 +126,8 @@
   line-height: 1;
 }
 
-/* Search Container */
-.header-search-container {
+/* Control Plane Search */
+.header-search-container.control-plane-search {
   max-width: 380px;
   width: 100%;
   min-width: 180px;
@@ -161,7 +168,165 @@
   stroke-width: 2;
 }
 
-/* Right Section: Actions & Profile */
+/* ==========================================================================
+   CLIENT PORTAL HEADER ELEMENTS
+   ========================================================================== */
+
+/* Breadcrumb Container */
+.client-breadcrumb-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  font-size: 12.5px;
+}
+
+/* Workspace Selector Dropdown Pill */
+.workspace-selector-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px 3px 4px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.workspace-selector-pill:hover {
+  background-color: var(--bg-hover, #f1f5f9);
+  border-color: var(--border-color, #e2e8f0);
+}
+
+.workspace-tag-badge {
+  background-color: #e0f2fe;
+  color: #0284c7;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 4px;
+  letter-spacing: 0.4px;
+  line-height: 1;
+}
+
+.workspace-title-text {
+  color: var(--text-primary, #0f172a);
+  font-weight: 600;
+  font-size: 12.5px;
+}
+
+.workspace-chevron-icon {
+  color: var(--text-muted, #64748b);
+  opacity: 0.8;
+}
+
+.breadcrumb-slash-divider {
+  color: var(--text-muted, #94a3b8);
+  font-size: 12px;
+  user-select: none;
+}
+
+.breadcrumb-category-text {
+  color: var(--text-secondary, #64748b);
+  font-size: 12.5px;
+  font-weight: 400;
+}
+
+.breadcrumb-page-text {
+  color: var(--text-primary, #0f172a);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+/* Client Portal Search Bar */
+.client-search-container {
+  width: 240px;
+}
+
+.client-search-input.ant-input-affix-wrapper {
+  background-color: var(--bg-input, #f8fafc) !important;
+  border: 1px solid var(--border-color, #e2e8f0) !important;
+  border-radius: 6px !important;
+  padding: 4px 8px 4px 10px !important;
+  height: 31px !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease;
+}
+
+.client-search-input.ant-input-affix-wrapper:hover,
+.client-search-input.ant-input-affix-wrapper:focus-within {
+  border-color: #cbd5e1 !important;
+  background-color: var(--bg-card, #ffffff) !important;
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.12) !important;
+}
+
+.client-search-input input.ant-input {
+  background: transparent !important;
+  font-size: 12px;
+  color: var(--text-primary, #1e293b);
+}
+
+.client-search-input input.ant-input::placeholder {
+  color: var(--text-muted, #94a3b8);
+  font-size: 12px;
+}
+
+.search-kbd-badge {
+  background-color: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 4px;
+  color: var(--text-muted, #94a3b8);
+  font-size: 10px;
+  font-family: var(--font-family-code);
+  padding: 1px 4px;
+  line-height: 1;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+/* Environment Selector Button */
+.environment-selector-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 31px;
+  padding: 0 10px;
+  background-color: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 6px;
+  color: var(--text-primary, #0f172a);
+  font-size: 11.5px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.15s ease-in-out;
+  white-space: nowrap;
+}
+
+.environment-selector-btn:hover {
+  background-color: var(--bg-hover, #f8fafc);
+  border-color: #cbd5e1;
+}
+
+.environment-dot-indicator {
+  color: #64748b;
+  font-size: 9px;
+  line-height: 1;
+}
+
+.environment-name-label {
+  font-weight: 500;
+}
+
+.environment-chevron-icon {
+  color: var(--text-muted, #64748b);
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   RIGHT ACTION CONTROLS
+   ========================================================================== */
+
 .header-right-section {
   display: flex;
   align-items: center;
@@ -189,17 +354,12 @@
 }
 
 .date-range-button:hover {
-  background-color: #f8fafc;
+  background-color: var(--bg-hover, #f8fafc);
   border-color: #cbd5e1;
-  color: #0f172a;
-}
-
-.date-range-button:active {
-  background-color: #f1f5f9;
 }
 
 .date-range-icon {
-  color: #475569;
+  color: var(--text-secondary, #475569);
   stroke-width: 1.8;
 }
 
@@ -220,7 +380,7 @@
   margin-right: 2px;
 }
 
-/* Theme Color Change Toggle Button */
+/* Theme Toggle Button */
 .header-theme-toggle-btn {
   display: inline-flex;
   align-items: center;
@@ -231,25 +391,21 @@
   background: transparent;
   border: 1px solid transparent;
   cursor: pointer;
-  color: #64748b;
+  color: var(--text-muted, #64748b);
   transition: all 0.15s ease-in-out;
 }
 
 .header-theme-toggle-btn:hover {
-  background-color: #f1f5f9;
-  color: #0f172a;
-  border-color: #e2e8f0;
-}
-
-.header-theme-toggle-btn .sun-icon {
-  color: #eab308;
+  background-color: var(--bg-hover, #f1f5f9);
+  color: var(--text-primary, #0f172a);
+  border-color: var(--border-color, #e2e8f0);
 }
 
 .header-theme-toggle-btn .moon-icon {
-  color: #64748b;
+  color: var(--text-muted, #64748b);
 }
 
-/* Notification Bell Wrapper */
+/* Notification Bell */
 .header-bell-wrapper {
   display: flex;
   align-items: center;
@@ -262,7 +418,7 @@
 }
 
 .header-bell-wrapper:hover {
-  background-color: #f1f5f9;
+  background-color: var(--bg-hover, #f1f5f9);
 }
 
 .bell-icon-container {
@@ -273,7 +429,7 @@
 }
 
 .header-bell-icon {
-  color: #334155;
+  color: var(--text-muted, #334155);
   stroke-width: 1.8;
 }
 
@@ -285,7 +441,7 @@
   height: 13px;
   padding: 0 2.5px;
   background-color: #ef4444;
-  border: 1.5px solid #ffffff;
+  border: 1.5px solid var(--bg-card, #ffffff);
   border-radius: 9999px;
   color: #ffffff;
   font-size: 8.5px;
@@ -296,7 +452,19 @@
   justify-content: center;
 }
 
-/* User Avatar Profile */
+/* Blue dot for Client Portal */
+.notification-blue-dot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 7px;
+  height: 7px;
+  background-color: #0284c7;
+  border: 1.5px solid var(--bg-card, #ffffff);
+  border-radius: 50%;
+}
+
+/* User Profile Avatar */
 .header-avatar-wrapper {
   display: flex;
   align-items: center;
@@ -333,8 +501,11 @@
 
 /* Responsive Breakpoints */
 @media (max-width: 900px) {
-  .header-search-container {
+  .header-search-container.control-plane-search {
     max-width: 200px;
+  }
+  .client-search-container {
+    width: 160px;
   }
 }
 
@@ -348,21 +519,13 @@
     gap: 6px;
   }
   
-  .role-pill-container {
+  .role-pill-container,
+  .client-breadcrumb-container {
     display: none;
-  }
-
-  .header-search-container {
-    min-width: 120px;
   }
 
   .date-range-button span,
-  .quick-actions-button span {
+  .environment-selector-btn span.environment-name-label {
     display: none;
-  }
-
-  .date-range-button,
-  .quick-actions-button {
-    padding: 0 8px;
   }
 }

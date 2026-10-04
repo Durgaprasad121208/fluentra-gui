@@ -1,0 +1,293 @@
+/* Platform Dashboard Styles (Designed to complement Ant Design ConfigProvider Themes) */
+
+.pd-root-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  padding-bottom: 24px;
+}
+
+/* 1. Header & Breadcrumb */
+.pd-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pd-subheading-tag {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.pd-main-heading {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+}
+
+.pd-snapshot-meta {
+  font-size: 12.5px !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Demo Alert */
+.pd-demo-alert {
+  border-radius: 8px !important;
+}
+
+/* 2. 8-Metrics Grid */
+.pd-metrics-container-card {
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.pd-metrics-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+}
+
+.pd-metric-cell {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-right: 1px solid var(--border-color, rgba(140, 140, 140, 0.12));
+  border-bottom: 1px solid var(--border-color, rgba(140, 140, 140, 0.12));
+}
+
+.pd-metric-cell:nth-child(4n) {
+  border-right: none;
+}
+
+.pd-metric-cell:nth-child(n + 5) {
+  border-bottom: none;
+}
+
+.pd-metric-title {
+  font-size: 12px !important;
+}
+
+.pd-metric-number {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.pd-metric-growth {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #16a34a;
+}
+
+body.dark .pd-metric-growth {
+  color: #22c55e;
+}
+
+/* 3. Standard Cards */
+.pd-standard-card {
+  border-radius: 12px !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pd-standard-card .ant-card-head {
+  padding: 12px 18px !important;
+  min-height: auto !important;
+  border-bottom: 1px solid var(--border-color, rgba(140, 140, 140, 0.12)) !important;
+}
+
+.pd-standard-card .ant-card-body {
+  padding: 16px 18px !important;
+  flex: 1;
+}
+
+.pd-card-heading-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pd-head-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pd-head-subtitle {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: #64748b;
+}
+
+body.dark .pd-head-subtitle {
+  color: #94a3b8;
+}
+
+.pd-card-extra-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0284c7;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+body.dark .pd-card-extra-link {
+  color: #38bdf8;
+}
+
+/* Donut Chart Layout */
+.pd-donut-flex-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: 14px;
+}
+
+.pd-donut-canvas-area {
+  flex: 1;
+  height: 180px;
+}
+
+.pd-donut-labels-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 135px;
+}
+
+.pd-legend-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  gap: 10px;
+}
+
+.pd-legend-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pd-dot-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* 4. Lists & Tables */
+.pd-items-vertical-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pd-list-row-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pd-list-item-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pd-list-main-title {
+  font-size: 13px !important;
+}
+
+.pd-list-sub-meta {
+  font-size: 11.5px !important;
+}
+
+.pd-rounded-tag {
+  border-radius: 12px !important;
+  padding: 1px 9px !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+}
+
+.pd-mono-text {
+  font-size: 12px !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+}
+
+/* Progress Meter */
+.pd-progress-meter-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Platform Events Stream */
+.pd-event-stream-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.pd-event-stream-row {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  font-size: 12.5px;
+}
+
+.pd-event-type-badge {
+  font-size: 11.5px !important;
+}
+
+.pd-event-summary-text {
+  font-size: 12.5px !important;
+}
+
+.pd-event-timestamp {
+  text-align: right;
+}
+
+/* Responsive Grid */
+@media (max-width: 992px) {
+  .pd-metrics-grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pd-metric-cell:nth-child(2n) {
+    border-right: none;
+  }
+  .pd-metric-cell:nth-child(n + 7) {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .pd-metrics-grid-layout {
+    grid-template-columns: 1fr;
+  }
+  .pd-metric-cell {
+    border-right: none;
+  }
+  .pd-metric-cell:last-child {
+    border-bottom: none;
+  }
+}
