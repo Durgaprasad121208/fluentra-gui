@@ -1,18 +1,18 @@
 :root {
   /* Central Brand Tokens */
-  --color-primary: #ea580c;
-  --color-primary-hover: #c2410c;
-  --color-primary-active: #9a3412;
-  --color-primary-light: #fff7ed;
+  --color-primary: #22c55e;
+  --color-primary-hover: #16a34a;
+  --color-primary-active: #15803d;
+  --color-primary-light: #f0fdf4;
   
   --color-info: #0284c7;
   --color-success: #10b981;
   --color-warning: #f59e0b;
   --color-error: #ef4444;
-  --color-avatar-bg: #1e3a8a;
+  --color-avatar-bg: #0f172a;
 
-  /* Central Sidebar Design Tokens (Exact Matched Aesthetic) */
-  --sidebar-bg: #0d171f;
+  /* Central Sidebar Design Tokens (Dark Default) */
+  --sidebar-bg: #04080c;
   --sidebar-border: rgba(255, 255, 255, 0.06);
   --sidebar-logo-title: #ffffff;
   --sidebar-logo-subtitle: #22c55e;
@@ -22,15 +22,16 @@
   --sidebar-item-hover-bg: rgba(255, 255, 255, 0.04);
   --sidebar-item-active-bg: #1a2630;
   --sidebar-item-active-border: #22c55e;
+  --sidebar-item-active-text: #ffffff;
   --sidebar-icon: #8898aa;
   --sidebar-icon-hover: #cbd5e1;
   --sidebar-icon-active: #22c55e;
-  --sidebar-footer-btn-bg: #111d27;
+  --sidebar-footer-btn-bg: #0c151f;
   --sidebar-footer-btn-border: rgba(255, 255, 255, 0.08);
 
   /* Global Typography & Font Weights */
-  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   --font-family-code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 
   --font-size-3xs: 8px;
@@ -50,13 +51,13 @@
   --font-weight-bold: 700;
 
   /* Default Base Theme Variables (Dark by default) */
-  --bg-base: #0d171f;
+  --bg-base: #04080c;
   --bg-container: #0d171f;
-  --bg-header: #0d171f;
-  --bg-card: #13222e;
+  --bg-header: #04080c;
+  --bg-card: #0d171f;
   --bg-elevated: #1a2630;
   --bg-hover: #1a2630;
-  --bg-input: #13222e;
+  --bg-input: #0d171f;
 
   --border-color: rgba(255, 255, 255, 0.08);
   --border-color-secondary: rgba(255, 255, 255, 0.15);
@@ -68,16 +69,33 @@
   --text-disabled: #3e4f61;
 }
 
-/* Explicit Dark Theme */
+/* Explicit Dark Theme Variables */
 body.dark-theme,
 [data-theme="dark"] {
-  --bg-base: #0d171f;
+  --bg-base: #04080c;
   --bg-container: #0d171f;
-  --bg-header: #0d171f;
-  --bg-card: #13222e;
+  --bg-header: #04080c;
+  --bg-card: #0d171f;
   --bg-elevated: #1a2630;
   --bg-hover: #1a2630;
-  --bg-input: #13222e;
+  --bg-input: #0d171f;
+
+  --sidebar-bg: #04080c;
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+  --sidebar-logo-title: #ffffff;
+  --sidebar-logo-subtitle: #22c55e;
+  --sidebar-section-title: #5a6e85;
+  --sidebar-text: #94a3b8;
+  --sidebar-text-hover: #ffffff;
+  --sidebar-item-hover-bg: rgba(255, 255, 255, 0.04);
+  --sidebar-item-active-bg: #1a2630;
+  --sidebar-item-active-border: #22c55e;
+  --sidebar-item-active-text: #ffffff;
+  --sidebar-icon: #8898aa;
+  --sidebar-icon-hover: #cbd5e1;
+  --sidebar-icon-active: #22c55e;
+  --sidebar-footer-btn-bg: #0c151f;
+  --sidebar-footer-btn-border: rgba(255, 255, 255, 0.08);
 
   --border-color: rgba(255, 255, 255, 0.08);
   --border-color-secondary: rgba(255, 255, 255, 0.15);
@@ -89,7 +107,7 @@ body.dark-theme,
   --text-disabled: #3e4f61;
 }
 
-/* Explicit Light Theme */
+/* Explicit Light Theme Variables (Matches Light Mode Mockup) */
 body.light-theme,
 [data-theme="light"] {
   --bg-base: #f8fafc;
@@ -99,6 +117,23 @@ body.light-theme,
   --bg-elevated: #ffffff;
   --bg-hover: #f1f5f9;
   --bg-input: #f8fafc;
+
+  --sidebar-bg: #ffffff;
+  --sidebar-border: #e2e8f0;
+  --sidebar-logo-title: #0f172a;
+  --sidebar-logo-subtitle: #0284c7;
+  --sidebar-section-title: #94a3b8;
+  --sidebar-text: #475569;
+  --sidebar-text-hover: #0f172a;
+  --sidebar-item-hover-bg: #f8fafc;
+  --sidebar-item-active-bg: #ecfdf5;
+  --sidebar-item-active-border: #16a34a;
+  --sidebar-item-active-text: #15803d;
+  --sidebar-icon: #64748b;
+  --sidebar-icon-hover: #0f172a;
+  --sidebar-icon-active: #16a34a;
+  --sidebar-footer-btn-bg: #f8fafc;
+  --sidebar-footer-btn-border: #e2e8f0;
 
   --border-color: #e2e8f0;
   --border-color-secondary: #cbd5e1;

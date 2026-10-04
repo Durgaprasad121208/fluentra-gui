@@ -8,6 +8,8 @@ import {
 } from 'react-router-dom';
 import { Spin, Card, Breadcrumb } from 'antd';
 import MainLayout from './components/layout/MainLayout';
+import { ThemeProvider } from './theme/ThemeContext';
+import NotificationProvider from './common/NotificationProvider';
 import './App.css';
 
 // Page Loader Fallback Component
@@ -221,8 +223,11 @@ const router = createBrowserRouter([
 // Main App Component
 const App: React.FC = () => {
   return (
-
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <NotificationProvider>
+        <RouterProvider router={router} />
+      </NotificationProvider>
+    </ThemeProvider>
   );
 };
 

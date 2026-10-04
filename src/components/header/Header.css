@@ -10,11 +10,12 @@
   height: 56px;
   line-height: normal;
   padding: 0;
-  background: #ffffff !important;
-  border-bottom: 1px solid #e2e8f0;
+  background: var(--bg-header, #ffffff) !important;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
   display: flex;
   flex-direction: column;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 /* Bright Top Accent Line */
@@ -84,7 +85,7 @@
 .header-section-divider {
   width: 1px;
   height: 18px;
-  background-color: #e2e8f0;
+  background-color: var(--border-color, #e2e8f0);
   flex-shrink: 0;
 }
 
@@ -126,8 +127,8 @@
 }
 
 .header-search-input.ant-input-affix-wrapper {
-  background-color: #f8fafc !important;
-  border: 1px solid #e2e8f0 !important;
+  background-color: var(--bg-input, #f8fafc) !important;
+  border: 1px solid var(--border-color, #e2e8f0) !important;
   border-radius: 6px !important;
   padding: 4px 10px !important;
   height: 31px !important;
@@ -138,24 +139,24 @@
 .header-search-input.ant-input-affix-wrapper:hover,
 .header-search-input.ant-input-affix-wrapper:focus-within {
   border-color: #cbd5e1 !important;
-  background-color: #ffffff !important;
+  background-color: var(--bg-card, #ffffff) !important;
   box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.12) !important;
 }
 
 .header-search-input input.ant-input {
   background: transparent !important;
   font-size: 12px;
-  color: #1e293b;
+  color: var(--text-primary, #1e293b);
 }
 
 .header-search-input input.ant-input::placeholder {
-  color: #94a3b8;
+  color: var(--text-muted, #94a3b8);
   font-weight: 400;
   font-size: 12px;
 }
 
 .search-prefix-icon {
-  color: #64748b;
+  color: var(--text-secondary, #64748b);
   margin-right: 4px;
   stroke-width: 2;
 }
@@ -175,10 +176,10 @@
   gap: 6px;
   height: 31px;
   padding: 0 11px;
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
+  background-color: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
   border-radius: 6px;
-  color: #1e293b;
+  color: var(--text-primary, #1e293b);
   font-size: 11.5px;
   font-weight: 500;
   cursor: pointer;
@@ -202,36 +203,50 @@
   stroke-width: 1.8;
 }
 
-/* Quick Actions Button */
-.quick-actions-button {
+/* Quick Actions Submit Button */
+.header-quick-action-btn.submit-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  height: 31px !important;
+  padding: 0 13px !important;
+  font-size: 11.5px !important;
+  border-radius: 6px !important;
+  line-height: normal !important;
+}
+
+.header-quick-action-btn .quick-actions-icon {
+  color: inherit !important;
+  margin-right: 2px;
+}
+
+/* Theme Color Change Toggle Button */
+.header-theme-toggle-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  height: 31px;
-  padding: 0 13px;
-  background-color: #0f172a;
-  border: 1px solid #0f172a;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
   border-radius: 6px;
-  color: #ffffff;
-  font-size: 11.5px;
-  font-weight: 600;
+  background: transparent;
+  border: 1px solid transparent;
   cursor: pointer;
-  transition: all 0.15s ease;
-  white-space: nowrap;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  color: #64748b;
+  transition: all 0.15s ease-in-out;
 }
 
-.quick-actions-button:hover {
-  background-color: #1e293b;
-  border-color: #1e293b;
+.header-theme-toggle-btn:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+  border-color: #e2e8f0;
 }
 
-.quick-actions-button:active {
-  background-color: #334155;
+.header-theme-toggle-btn .sun-icon {
+  color: #eab308;
 }
 
-.quick-actions-icon {
-  color: #ffffff;
+.header-theme-toggle-btn .moon-icon {
+  color: #64748b;
 }
 
 /* Notification Bell Wrapper */

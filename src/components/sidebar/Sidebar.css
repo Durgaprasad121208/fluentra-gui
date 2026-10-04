@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .app-sider.ant-layout-sider {
-  background: var(--sidebar-bg, #0d171f) !important;
+  background: var(--sidebar-bg, #04080c) !important;
   color: var(--sidebar-text, #94a3b8);
   height: 100vh;
   position: sticky;
@@ -21,7 +21,7 @@
   flex-direction: column;
   height: 100%;
   overflow: hidden;
-  background: var(--sidebar-bg, #0d171f);
+  background: var(--sidebar-bg, #04080c);
 }
 
 /* Logo Header */
@@ -31,7 +31,7 @@
   align-items: center;
   justify-content: flex-start;
   border-bottom: 1px solid var(--sidebar-border, rgba(255, 255, 255, 0.05));
-  background: var(--sidebar-bg, #0d171f);
+  background: var(--sidebar-bg, #04080c);
 }
 
 .sider-logo-left {
@@ -93,7 +93,7 @@
   padding: 8px 0;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
-  background: var(--sidebar-bg, #0d171f);
+  background: var(--sidebar-bg, #04080c);
 }
 
 /* Custom Sleek Scrollbar */
@@ -152,7 +152,7 @@
 /* Active Menu Item Pill */
 .sider-menu-item.active {
   background: var(--sidebar-item-active-bg, #1a2630);
-  color: #ffffff;
+  color: var(--sidebar-item-active-text, #ffffff);
   font-weight: 600;
 }
 
@@ -235,7 +235,7 @@
 .sider-footer-container {
   padding: 12px 14px;
   border-top: 1px solid var(--sidebar-border, rgba(255, 255, 255, 0.05));
-  background: var(--sidebar-bg, #0d171f);
+  background: var(--sidebar-bg, #04080c);
 }
 
 .switch-portal-btn {

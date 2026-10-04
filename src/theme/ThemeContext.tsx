@@ -1,26 +1,30 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { ConfigProvider, theme as antdTheme } from 'antd';
+import { ConfigProvider, ThemeConfig } from 'antd';
+import { darkThemeConfig, lightThemeConfig } from './themeConfig';
 
 type ThemeMode = 'dark' | 'light';
 
 interface ThemeContextType {
+  isDarkMode: boolean;
+  isDark: boolean;
   theme: ThemeMode;
+  themeMode: ThemeMode;
   toggleTheme: () => void;
   setTheme: (theme: ThemeMode) => void;
-  isDark: boolean;
 }
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+const ThemeContext = createContext<ThemeContextType>({
+  isDarkMode: true,
+  isDark: true,
+  theme: 'dark',
+  themeMode: 'dark',
+  toggleTheme: () => {},
+  setTheme: () => {},
+});
 
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
-};
+export const useTheme = () => useContext(ThemeContext);
 
-interface ThemeProviderProps {
+export interface ThemeProviderProps {
   children: React.ReactNode;
   defaultTheme?: ThemeMode;
 }
@@ -29,47 +33,49 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   children,
   defaultTheme = 'dark',
 }) => {
-  const [theme, setThemeState] = useState<ThemeMode>(() => {
-    const savedTheme = localStorage.getItem('app_theme') as ThemeMode;
-    return savedTheme || defaultTheme;
+  const [themeMode, setThemeMode] = useState<ThemeMode>(() => {
+    const saved = localStorage.getItem('app_theme') as ThemeMode;
+    return saved === 'light' || saved === 'dark' ? saved : defaultTheme;
   });
 
-  const isDark = theme === 'dark';
+  const isDarkMode = themeMode === 'dark';
 
   useEffect(() => {
-    localStorage.setItem('app_theme', theme);
-    document.documentElement.setAttribute('data-theme', theme);
-    if (isDark) {
+    localStorage.setItem('app_theme', themeMode);
+    document.documentElement.setAttribute('data-theme', themeMode);
+    if (isDarkMode) {
       document.body.classList.add('dark-theme');
       document.body.classList.remove('light-theme');
     } else {
       document.body.classList.add('light-theme');
       document.body.classList.remove('dark-theme');
     }
-  }, [theme, isDark]);
+  }, [themeMode, isDarkMode]);
 
   const toggleTheme = () => {
-    setThemeState((prev) => (prev === 'dark' ? 'light' : 'dark'));
+    setThemeMode((prev) => (prev === 'dark' ? 'light' : 'dark'));
   };
 
-  const setTheme = (newTheme: ThemeMode) => {
-    setThemeState(newTheme);
+  const setTheme = (mode: ThemeMode) => {
+    setThemeMode(mode);
   };
 
-  const themeConfig = {
-    algorithm: isDark ? antdTheme.darkAlgorithm : antdTheme.defaultAlgorithm,
-    token: {
-      colorPrimary: '#22c55e',
-      colorBgBase: isDark ? '#0d171f' : '#ffffff',
-      colorTextBase: isDark ? '#f8fafc' : '#0f172a',
-      borderRadius: 8,
-      fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    },
-  };
+  const currentThemeConfig: ThemeConfig = isDarkMode ? darkThemeConfig : lightThemeConfig;
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, setTheme, isDark }}>
-      <ConfigProvider theme={themeConfig}>{children}</ConfigProvider>
+    <ThemeContext.Provider
+      value={{
+        isDarkMode,
+        isDark: isDarkMode,
+        theme: themeMode,
+        themeMode,
+        toggleTheme,
+        setTheme,
+      }}
+    >
+      <ConfigProvider theme={currentThemeConfig}>
+        {children}
+      </ConfigProvider>
     </ThemeContext.Provider>
   );
 };

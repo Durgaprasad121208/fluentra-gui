@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Custom Button Component Styles - Theme Adaptive
+   ========================================================================== */
+
+/* Submit Button - Base */
+.submit-btn,
+.submit-btn.ant-btn,
+.submit-btn.ant-btn-primary {
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  height: 38px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Submit Button in Dark Theme: Crisp Light Pill (#f1f5f9 / #ffffff) with Dark Text (#0f172a) */
+body.dark-theme .submit-btn,
+body.dark-theme .submit-btn.ant-btn,
+body.dark-theme .submit-btn.ant-btn-primary,
+[data-theme="dark"] .submit-btn,
+.submit-btn {
+  background-color: #f1f5f9 !important;
+  background: #f1f5f9 !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+body.dark-theme .submit-btn *,
+body.dark-theme .submit-btn span,
+body.dark-theme .submit-btn svg,
+[data-theme="dark"] .submit-btn *,
+[data-theme="dark"] .submit-btn span,
+[data-theme="dark"] .submit-btn svg,
+.submit-btn *,
+.submit-btn span,
+.submit-btn svg {
+  color: #0f172a !important;
+}
+
+body.dark-theme .submit-btn:hover,
+body.dark-theme .submit-btn:focus,
+[data-theme="dark"] .submit-btn:hover,
+.submit-btn:hover {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #000000 !important;
+}
+
+body.dark-theme .submit-btn:active,
+[data-theme="dark"] .submit-btn:active,
+.submit-btn:active {
+  background-color: #e2e8f0 !important;
+  background: #e2e8f0 !important;
+}
+
+/* Submit Button in Light Theme: Deep Dark Slate (#0d171f) with White Text (#ffffff) */
+body.light-theme .submit-btn,
+body.light-theme .submit-btn.ant-btn,
+body.light-theme .submit-btn.ant-btn-primary,
+[data-theme="light"] .submit-btn {
+  background-color: #0d171f !important;
+  background: #0d171f !important;
+  border: 1px solid #0d171f !important;
+  color: #ffffff !important;
+}
+
+body.light-theme .submit-btn *,
+body.light-theme .submit-btn span,
+body.light-theme .submit-btn svg,
+[data-theme="light"] .submit-btn *,
+[data-theme="light"] .submit-btn span,
+[data-theme="light"] .submit-btn svg {
+  color: #ffffff !important;
+}
+
+body.light-theme .submit-btn:hover,
+body.light-theme .submit-btn:focus,
+[data-theme="light"] .submit-btn:hover {
+  background-color: #1e293b !important;
+  background: #1e293b !important;
+  border-color: #1e293b !important;
+  color: #ffffff !important;
+}
+
+body.light-theme .submit-btn:active,
+[data-theme="light"] .submit-btn:active {
+  background-color: #334155 !important;
+  background: #334155 !important;
+}
+
+/* Small Button Variant */
+.submit-btn.ant-btn-sm {
+  height: 28px !important;
+  font-size: 11.5px !important;
+  padding: 0 10px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Cancel Button */
+.cancel-btn,
+.cancel-btn.ant-btn {
+  border-color: var(--border-color, #e2e8f0) !important;
+  background: var(--bg-card, #ffffff) !important;
+  color: var(--text-primary, #0f172a) !important;
+  font-weight: 500 !important;
+  border-radius: 8px !important;
+  height: 38px;
+  transition: all 0.15s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cancel-btn.ant-btn-sm {
+  height: 28px !important;
+  font-size: 11.5px !important;
+  padding: 0 10px !important;
+  border-radius: 6px !important;
+}
+
+.cancel-btn:hover,
+.cancel-btn:focus,
+.cancel-btn.ant-btn:hover {
+  border-color: var(--border-color-secondary, #cbd5e1) !important;
+  background: var(--bg-hover, #f1f5f9) !important;
+  color: var(--text-primary, #0f172a) !important;
+}
+
+.cancel-btn:active,
+.cancel-btn.ant-btn:active {
+  background: #e2e8f0 !important;
+}

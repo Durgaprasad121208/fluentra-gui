@@ -6,31 +6,14 @@ import {
   Calendar,
   Plus,
   Bell,
+  PanelLeft,
+  Moon,
 } from 'lucide-react';
+import { SubmitButton } from '../custombutton/CustomButton';
+import { useTheme } from '../../theme/ThemeContext';
 import './Header.css';
 
 const { Header: AntHeader } = Layout;
-
-// Exact Sidebar Toggle Icon (Panel / Sidebar layout outline)
-const SidebarToggleIcon: React.FC<{ size?: number; className?: string }> = ({
-  size = 17,
-  className = '',
-}) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.8"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <rect x="3" y="3" width="18" height="18" rx="3.5" />
-    <line x1="9" y1="3" x2="9" y2="21" />
-  </svg>
-);
 
 export interface HeaderProps {
   roleBadgeText?: string;
@@ -61,6 +44,8 @@ export const Header: React.FC<HeaderProps> = ({
   onNotificationsClick,
   onProfileClick,
 }) => {
+  const { isDarkMode, toggleTheme } = useTheme();
+
   return (
     <AntHeader className="app-header">
       {/* Top Bright Green Accent Line */}
@@ -77,7 +62,7 @@ export const Header: React.FC<HeaderProps> = ({
             title={isSidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
             aria-label="Toggle Sidebar"
           >
-            <SidebarToggleIcon className="sidebar-toggle-icon" />
+            <PanelLeft size={16} className="sidebar-toggle-icon" />
           </button>
 
           {/* Vertical Divider */}
@@ -113,14 +98,24 @@ export const Header: React.FC<HeaderProps> = ({
             <span>{dateRangeLabel}</span>
           </button>
 
-          {/* Quick Actions Button */}
-          <button
-            type="button"
-            className="quick-actions-button"
+          {/* Quick Actions Submit Button */}
+          <SubmitButton
+            className="header-quick-action-btn"
+            icon={<Plus size={14} strokeWidth={2.5} className="quick-actions-icon" />}
             onClick={onQuickActionsClick}
           >
-            <Plus size={14} strokeWidth={2.5} className="quick-actions-icon" />
-            <span>Quick actions</span>
+            Quick actions
+          </SubmitButton>
+
+          {/* Theme Color Change Button with Lucide Moon Icon */}
+          <button
+            type="button"
+            className="header-theme-toggle-btn"
+            onClick={toggleTheme}
+            title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+            aria-label="Toggle Theme"
+          >
+            <Moon size={16} className="theme-toggle-icon moon-icon" />
           </button>
 
           {/* Notifications Bell */}
@@ -129,6 +124,7 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={onNotificationsClick}
             role="button"
             tabIndex={0}
+            title="Notifications"
           >
             <div className="bell-icon-container">
               <Bell size={16} className="header-bell-icon" />
@@ -146,6 +142,7 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={onProfileClick}
             role="button"
             tabIndex={0}
+            title="User Profile"
           >
             <div className="user-avatar-circle">
               <span className="user-avatar-initials">{userInitials}</span>
