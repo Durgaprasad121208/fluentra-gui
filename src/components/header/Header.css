@@ -1,1 +1,353 @@
-@import './Header.css';
+/* ==========================================================================
+   Header Component Styles - Compact Height & Refined Typography
+   ========================================================================== */
+
+.app-header.ant-layout-header {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  height: 56px;
+  line-height: normal;
+  padding: 0;
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+}
+
+/* Bright Top Accent Line */
+.header-top-accent-line {
+  height: 2px;
+  width: 100%;
+  background: #22c55e;
+  flex-shrink: 0;
+}
+
+/* Main Bar Container */
+.header-main-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* Left Section: Sidebar Toggle, Divider, Role Badge & Search */
+.header-left-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Sidebar Toggle / Closer Button */
+.sidebar-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.15s ease-in-out;
+  flex-shrink: 0;
+}
+
+.sidebar-toggle-btn:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+  border-color: #e2e8f0;
+}
+
+.sidebar-toggle-btn:active {
+  background-color: #e2e8f0;
+}
+
+.sidebar-toggle-btn.is-collapsed .sidebar-toggle-icon {
+  color: #22c55e;
+}
+
+.sidebar-toggle-icon {
+  display: block;
+}
+
+/* Vertical Section Divider */
+.header-section-divider {
+  width: 1px;
+  height: 18px;
+  background-color: #e2e8f0;
+  flex-shrink: 0;
+}
+
+/* Role Pill Badge */
+.role-pill-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  padding: 4px 10px;
+  color: #16a34a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.role-shield-icon {
+  color: #16a34a;
+  stroke-width: 2.2;
+  flex-shrink: 0;
+}
+
+.role-pill-label {
+  line-height: 1;
+}
+
+/* Search Container */
+.header-search-container {
+  max-width: 380px;
+  width: 100%;
+  min-width: 180px;
+}
+
+.header-search-input.ant-input-affix-wrapper {
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 6px !important;
+  padding: 4px 10px !important;
+  height: 31px !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease;
+}
+
+.header-search-input.ant-input-affix-wrapper:hover,
+.header-search-input.ant-input-affix-wrapper:focus-within {
+  border-color: #cbd5e1 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.12) !important;
+}
+
+.header-search-input input.ant-input {
+  background: transparent !important;
+  font-size: 12px;
+  color: #1e293b;
+}
+
+.header-search-input input.ant-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.search-prefix-icon {
+  color: #64748b;
+  margin-right: 4px;
+  stroke-width: 2;
+}
+
+/* Right Section: Actions & Profile */
+.header-right-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* Date Range Button */
+.date-range-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 31px;
+  padding: 0 11px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #1e293b;
+  font-size: 11.5px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.date-range-button:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.date-range-button:active {
+  background-color: #f1f5f9;
+}
+
+.date-range-icon {
+  color: #475569;
+  stroke-width: 1.8;
+}
+
+/* Quick Actions Button */
+.quick-actions-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 31px;
+  padding: 0 13px;
+  background-color: #0f172a;
+  border: 1px solid #0f172a;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.quick-actions-button:hover {
+  background-color: #1e293b;
+  border-color: #1e293b;
+}
+
+.quick-actions-button:active {
+  background-color: #334155;
+}
+
+.quick-actions-icon {
+  color: #ffffff;
+}
+
+/* Notification Bell Wrapper */
+.header-bell-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.header-bell-wrapper:hover {
+  background-color: #f1f5f9;
+}
+
+.bell-icon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-bell-icon {
+  color: #334155;
+  stroke-width: 1.8;
+}
+
+.notification-red-badge {
+  position: absolute;
+  top: -3px;
+  right: -5px;
+  min-width: 13px;
+  height: 13px;
+  padding: 0 2.5px;
+  background-color: #ef4444;
+  border: 1.5px solid #ffffff;
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 8.5px;
+  font-weight: 700;
+  line-height: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* User Avatar Profile */
+.header-avatar-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 1px;
+}
+
+.user-avatar-circle {
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  background-color: #0f172a;
+  border: 2px solid #22c55e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.user-avatar-circle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.45);
+}
+
+.user-avatar-initials {
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  user-select: none;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+  .header-search-container {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header.ant-layout-header {
+    height: 48px;
+  }
+
+  .header-main-bar {
+    padding: 0 10px;
+    gap: 6px;
+  }
+  
+  .role-pill-container {
+    display: none;
+  }
+
+  .header-search-container {
+    min-width: 120px;
+  }
+
+  .date-range-button span,
+  .quick-actions-button span {
+    display: none;
+  }
+
+  .date-range-button,
+  .quick-actions-button {
+    padding: 0 8px;
+  }
+}

@@ -92,6 +92,8 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
         <Header
           roleBadgeText={`FLUENTRALABS ${activeUserRole.toUpperCase()}`}
           userInitials={activeUserInitials}
+          isSidebarCollapsed={isCollapsed}
+          onToggleSidebar={() => handleToggleCollapse()}
           onSearch={onSearch}
         />
 

@@ -1,15 +1,36 @@
 import React from 'react';
-import { Layout, Input, Button, Avatar, Badge } from 'antd';
+import { Layout, Input } from 'antd';
 import {
-  SearchOutlined,
-  CalendarOutlined,
-  PlusOutlined,
-  BellOutlined,
-} from '@ant-design/icons';
-import { ShieldCheck } from 'lucide-react';
+  ShieldCheck,
+  Search,
+  Calendar,
+  Plus,
+  Bell,
+} from 'lucide-react';
 import './Header.css';
 
 const { Header: AntHeader } = Layout;
+
+// Exact Sidebar Toggle Icon (Panel / Sidebar layout outline)
+const SidebarToggleIcon: React.FC<{ size?: number; className?: string }> = ({
+  size = 17,
+  className = '',
+}) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <rect x="3" y="3" width="18" height="18" rx="3.5" />
+    <line x1="9" y1="3" x2="9" y2="21" />
+  </svg>
+);
 
 export interface HeaderProps {
   roleBadgeText?: string;
@@ -17,6 +38,8 @@ export interface HeaderProps {
   dateRangeLabel?: string;
   userInitials?: string;
   notificationCount?: number;
+  isSidebarCollapsed?: boolean;
+  onToggleSidebar?: () => void;
   onSearch?: (value: string) => void;
   onDateRangeClick?: () => void;
   onQuickActionsClick?: () => void;
@@ -30,6 +53,8 @@ export const Header: React.FC<HeaderProps> = ({
   dateRangeLabel = 'Last 30 days',
   userInitials = 'PK',
   notificationCount = 4,
+  isSidebarCollapsed = false,
+  onToggleSidebar,
   onSearch,
   onDateRangeClick,
   onQuickActionsClick,
@@ -38,72 +63,93 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <AntHeader className="app-header">
-      {/* Top Accent Line */}
-      <div className="header-top-accent" />
+      {/* Top Bright Green Accent Line */}
+      <div className="header-top-accent-line" />
 
-      <div className="header-content">
-        {/* Left Section */}
-        <div className="header-left">
+      <div className="header-main-bar">
+        {/* Left Section: Sidebar Closer/Toggle, Divider, Role Badge & Search Bar */}
+        <div className="header-left-section">
+          {/* Sidebar Toggle/Closer Button */}
+          <button
+            type="button"
+            className={`sidebar-toggle-btn ${isSidebarCollapsed ? 'is-collapsed' : ''}`}
+            onClick={onToggleSidebar}
+            title={isSidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+            aria-label="Toggle Sidebar"
+          >
+            <SidebarToggleIcon className="sidebar-toggle-icon" />
+          </button>
+
+          {/* Vertical Divider */}
+          <div className="header-section-divider" />
+
           {/* Role Pill Badge */}
-          <div className="role-pill-badge">
-            <ShieldCheck size={14} className="shield-icon" />
-            <span className="role-pill-text">{roleBadgeText}</span>
+          <div className="role-pill-container">
+            <ShieldCheck size={13} className="role-shield-icon" />
+            <span className="role-pill-label">{roleBadgeText}</span>
           </div>
 
-          {/* Search Input */}
-          <div className="search-wrapper">
+          {/* Search Input Box */}
+          <div className="header-search-container">
             <Input
-              prefix={<SearchOutlined className="search-icon" />}
+              prefix={<Search size={14} className="search-prefix-icon" />}
               placeholder={searchPlaceholder}
-              className="search-input"
+              className="header-search-input"
               allowClear
               onChange={(e) => onSearch && onSearch(e.target.value)}
             />
           </div>
         </div>
 
-        {/* Right Section */}
-        <div className="header-right">
+        {/* Right Section: Actions & User Profile */}
+        <div className="header-right-section">
           {/* Date Range Selector */}
-          <Button
-            className="date-range-btn"
-            icon={<CalendarOutlined className="btn-icon" />}
+          <button
+            type="button"
+            className="date-range-button"
             onClick={onDateRangeClick}
           >
-            {dateRangeLabel}
-          </Button>
+            <Calendar size={14} className="date-range-icon" />
+            <span>{dateRangeLabel}</span>
+          </button>
 
           {/* Quick Actions Button */}
-          <Button
-            type="primary"
-            className="quick-actions-btn"
-            icon={<PlusOutlined className="btn-icon" />}
+          <button
+            type="button"
+            className="quick-actions-button"
             onClick={onQuickActionsClick}
           >
-            Quick actions
-          </Button>
+            <Plus size={14} strokeWidth={2.5} className="quick-actions-icon" />
+            <span>Quick actions</span>
+          </button>
 
           {/* Notifications Bell */}
-          <div className="notification-wrapper" onClick={onNotificationsClick}>
-            <Badge
-              count={notificationCount}
-              size="small"
-              className="notification-badge"
-            >
-              <Button
-                type="text"
-                shape="circle"
-                className="bell-btn"
-                icon={<BellOutlined className="bell-icon" />}
-              />
-            </Badge>
+          <div
+            className="header-bell-wrapper"
+            onClick={onNotificationsClick}
+            role="button"
+            tabIndex={0}
+          >
+            <div className="bell-icon-container">
+              <Bell size={16} className="header-bell-icon" />
+              {notificationCount > 0 && (
+                <span className="notification-red-badge">
+                  {notificationCount > 99 ? '99+' : notificationCount}
+                </span>
+              )}
+            </div>
           </div>
 
-          {/* User Profile Avatar */}
-          <div className="profile-wrapper" onClick={onProfileClick}>
-            <Avatar size={34} className="profile-avatar">
-              {userInitials}
-            </Avatar>
+          {/* User Profile Avatar with Green Border */}
+          <div
+            className="header-avatar-wrapper"
+            onClick={onProfileClick}
+            role="button"
+            tabIndex={0}
+          >
+            <div className="user-avatar-circle">
+              <span className="user-avatar-initials">{userInitials}</span>
+            </div>
           </div>
         </div>
       </div>
