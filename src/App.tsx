@@ -11,6 +11,7 @@ import MainLayout from './components/layout/MainLayout';
 import { ThemeProvider } from './theme/ThemeContext';
 import NotificationProvider from './common/NotificationProvider';
 import { PlatformDashboard } from './pages/PlatformDashboard/PlatformDashboard';
+import { Organisation } from './pages/organisations/Organisation';
 import './App.css';
 
 // Page Loader Fallback Component
@@ -98,12 +99,7 @@ const router = createBrowserRouter([
       // Customers
       {
         path: '/customers/organisations',
-        element: (
-          <PagePlaceholder
-            title="Organisations"
-            subtitle="Manage enterprise customer organisations, tenants, and licenses."
-          />
-        ),
+        element: <Organisation />,
       },
       {
         path: '/customers/users',

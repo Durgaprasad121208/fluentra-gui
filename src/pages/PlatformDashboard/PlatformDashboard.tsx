@@ -118,22 +118,22 @@ export const PlatformDashboard: React.FC = () => {
       trigger: 'axis',
       backgroundColor: tooltipBg,
       borderColor: tooltipBorder,
-      textStyle: { color: textColor, fontSize: 12 },
+      textStyle: { color: textColor, fontSize: 11.5 },
     },
-    grid: { top: 15, right: 15, bottom: 20, left: 42 },
+    grid: { top: 12, right: 12, bottom: 18, left: 38 },
     xAxis: {
       type: 'category',
       data: ['Jul', 'Aug', 'Sep', 'Oct'],
       axisLine: { show: false },
       axisTick: { show: false },
-      axisLabel: { color: subtextColor, fontSize: 11 },
+      axisLabel: { color: subtextColor, fontSize: 10.5 },
     },
     yAxis: {
       type: 'value',
       min: 1081,
       max: 1304,
       interval: 60,
-      axisLabel: { color: subtextColor, fontSize: 11 },
+      axisLabel: { color: subtextColor, fontSize: 10.5 },
       splitLine: { lineStyle: { color: splitLineColor, type: 'solid' } },
     },
     series: [
@@ -142,7 +142,7 @@ export const PlatformDashboard: React.FC = () => {
         type: 'line',
         smooth: false,
         showSymbol: false,
-        lineStyle: { color: '#0284c7', width: 2.2 },
+        lineStyle: { color: '#0284c7', width: 2 },
         areaStyle: {
           color: {
             type: 'linear',
@@ -169,16 +169,16 @@ export const PlatformDashboard: React.FC = () => {
       trigger: 'axis',
       backgroundColor: tooltipBg,
       borderColor: tooltipBorder,
-      textStyle: { color: textColor, fontSize: 12 },
+      textStyle: { color: textColor, fontSize: 11.5 },
       formatter: (params: any) => `${params[0].name}: $${params[0].value}k`,
     },
-    grid: { top: 15, right: 15, bottom: 20, left: 48 },
+    grid: { top: 12, right: 12, bottom: 18, left: 44 },
     xAxis: {
       type: 'category',
       data: ['Jul', 'Aug', 'Sep', 'Oct'],
       axisLine: { show: false },
       axisTick: { show: false },
-      axisLabel: { color: subtextColor, fontSize: 11 },
+      axisLabel: { color: subtextColor, fontSize: 10.5 },
     },
     yAxis: {
       type: 'value',
@@ -187,7 +187,7 @@ export const PlatformDashboard: React.FC = () => {
       interval: 20,
       axisLabel: {
         color: subtextColor,
-        fontSize: 11,
+        fontSize: 10.5,
         formatter: (val: number) => `$${val}k`,
       },
       splitLine: { lineStyle: { color: splitLineColor, type: 'solid' } },
@@ -198,7 +198,7 @@ export const PlatformDashboard: React.FC = () => {
         type: 'line',
         smooth: false,
         showSymbol: false,
-        lineStyle: { color: '#0284c7', width: 2.2 },
+        lineStyle: { color: '#0284c7', width: 2 },
         data: [259, 281, 303, 323],
       },
     ],
@@ -212,7 +212,7 @@ export const PlatformDashboard: React.FC = () => {
       trigger: 'item',
       backgroundColor: tooltipBg,
       borderColor: tooltipBorder,
-      textStyle: { color: textColor, fontSize: 12 },
+      textStyle: { color: textColor, fontSize: 11.5 },
       formatter: '{b}: {c} ({d}%)',
     },
     series: [
@@ -246,22 +246,22 @@ export const PlatformDashboard: React.FC = () => {
       trigger: 'axis',
       backgroundColor: tooltipBg,
       borderColor: tooltipBorder,
-      textStyle: { color: textColor, fontSize: 12 },
+      textStyle: { color: textColor, fontSize: 11.5 },
     },
-    grid: { top: 15, right: 15, bottom: 20, left: 34 },
+    grid: { top: 12, right: 12, bottom: 18, left: 30 },
     xAxis: {
       type: 'category',
       data: ['Jul', 'Aug', 'Sep', 'Oct'],
       axisLine: { show: false },
       axisTick: { show: false },
-      axisLabel: { color: subtextColor, fontSize: 11 },
+      axisLabel: { color: subtextColor, fontSize: 10.5 },
     },
     yAxis: {
       type: 'value',
       min: 0,
       max: 60,
       interval: 15,
-      axisLabel: { color: subtextColor, fontSize: 11 },
+      axisLabel: { color: subtextColor, fontSize: 10.5 },
       splitLine: { lineStyle: { color: splitLineColor, type: 'solid' } },
     },
     series: [
@@ -271,7 +271,7 @@ export const PlatformDashboard: React.FC = () => {
         barWidth: '55%',
         itemStyle: {
           color: '#84cc16',
-          borderRadius: [4, 4, 0, 0],
+          borderRadius: [3, 3, 0, 0],
         },
         data: [48, 60, 61, 57],
       },
@@ -286,16 +286,16 @@ export const PlatformDashboard: React.FC = () => {
       trigger: 'axis',
       backgroundColor: tooltipBg,
       borderColor: tooltipBorder,
-      textStyle: { color: textColor, fontSize: 12 },
+      textStyle: { color: textColor, fontSize: 11.5 },
       formatter: (params: any) => `${params[0].name}: ${params[0].value}%`,
     },
-    grid: { top: 15, right: 15, bottom: 20, left: 38 },
+    grid: { top: 12, right: 12, bottom: 18, left: 34 },
     xAxis: {
       type: 'category',
       data: ['Jul', 'Aug', 'Sep', 'Oct'],
       axisLine: { show: false },
       axisTick: { show: false },
-      axisLabel: { color: subtextColor, fontSize: 11 },
+      axisLabel: { color: subtextColor, fontSize: 10.5 },
     },
     yAxis: {
       type: 'value',
@@ -304,7 +304,7 @@ export const PlatformDashboard: React.FC = () => {
       interval: 5,
       axisLabel: {
         color: subtextColor,
-        fontSize: 11,
+        fontSize: 10.5,
         formatter: (val: number) => `${val}%`,
       },
       splitLine: { lineStyle: { color: splitLineColor, type: 'solid' } },
@@ -316,9 +316,9 @@ export const PlatformDashboard: React.FC = () => {
         smooth: false,
         showSymbol: true,
         symbol: 'circle',
-        symbolSize: 6,
+        symbolSize: 5,
         itemStyle: { color: '#84cc16' },
-        lineStyle: { color: '#84cc16', width: 2.2 },
+        lineStyle: { color: '#84cc16', width: 2 },
         data: [26.5, 27.8, 28.9, 30.2],
       },
     ],
@@ -332,16 +332,16 @@ export const PlatformDashboard: React.FC = () => {
       trigger: 'axis',
       backgroundColor: tooltipBg,
       borderColor: tooltipBorder,
-      textStyle: { color: textColor, fontSize: 12 },
+      textStyle: { color: textColor, fontSize: 11.5 },
       formatter: (params: any) => `${params[0].name}: ${params[0].value}%`,
     },
-    grid: { top: 15, right: 15, bottom: 20, left: 40 },
+    grid: { top: 12, right: 12, bottom: 18, left: 36 },
     xAxis: {
       type: 'category',
       data: ['Jul', 'Aug', 'Sep', 'Oct'],
       axisLine: { show: false },
       axisTick: { show: false },
-      axisLabel: { color: subtextColor, fontSize: 11 },
+      axisLabel: { color: subtextColor, fontSize: 10.5 },
     },
     yAxis: {
       type: 'value',
@@ -350,7 +350,7 @@ export const PlatformDashboard: React.FC = () => {
       interval: 0.4,
       axisLabel: {
         color: subtextColor,
-        fontSize: 11,
+        fontSize: 10.5,
         formatter: (val: number) => `${val}%`,
       },
       splitLine: { lineStyle: { color: splitLineColor, type: 'solid' } },
@@ -362,7 +362,7 @@ export const PlatformDashboard: React.FC = () => {
         barWidth: '55%',
         itemStyle: {
           color: '#e05e5e',
-          borderRadius: [4, 4, 0, 0],
+          borderRadius: [3, 3, 0, 0],
         },
         data: [1.42, 1.53, 1.32, 1.21],
       },
@@ -391,36 +391,38 @@ export const PlatformDashboard: React.FC = () => {
       {/* Demonstration Banner */}
       <Alert
         message={
-          <span style={{ fontSize: 13 }}>
+          <span style={{ fontSize: 12 }}>
             <strong>Demonstration data.</strong> Platform totals and trends are illustrative; the lists below reflect the sample organisations in this prototype.
           </span>
         }
         type="info"
         showIcon
-        icon={<Info size={16} />}
+        icon={<Info size={15} />}
         className="pd-demo-alert"
       />
 
       {/* -------------------------------------------------------------------
-          8-METRICS KPI CARD
+          8-METRICS SEPARATE KPI CARDS (2 Rows x 4 Columns)
          ------------------------------------------------------------------- */}
-      <Card className="pd-metrics-container-card" styles={{ body: { padding: 0 } }}>
-        <div className="pd-metrics-grid-layout">
-          {METRICS.map((metric) => (
-            <div key={metric.id} className="pd-metric-cell">
-              <Text type="secondary" className="pd-metric-title">
-                {metric.label}
-              </Text>
-              <div className="pd-metric-number">
-                {metric.value}
+      <Row gutter={[16, 16]}>
+        {METRICS.map((metric) => (
+          <Col xs={24} sm={12} lg={6} key={metric.id}>
+            <Card className="pd-individual-metric-card">
+              <div className="pd-metric-card-inner">
+                <Text type="secondary" className="pd-metric-card-label">
+                  {metric.label}
+                </Text>
+                <div className="pd-metric-card-val">
+                  {metric.value}
+                </div>
+                <div className="pd-metric-card-trend">
+                  <ArrowUpRight size={13} strokeWidth={2.5} /> {metric.trend}
+                </div>
               </div>
-              <div className="pd-metric-growth">
-                <ArrowUpRight size={13} strokeWidth={2.5} /> {metric.trend}
-              </div>
-            </div>
-          ))}
-        </div>
-      </Card>
+            </Card>
+          </Col>
+        ))}
+      </Row>
 
       {/* -------------------------------------------------------------------
           6 CHARTS GRID (2 Rows x 3 Columns)
