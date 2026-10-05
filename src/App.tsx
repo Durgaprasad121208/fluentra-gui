@@ -15,6 +15,8 @@ import { Organisation } from './pages/organisations/Organisation';
 import { Users } from './pages/users/Users';
 import { CustomerActivity } from './pages/customer-activity/CustomerActivity';
 import { Subscription } from './pages/subscriptions/Subscription';
+import { PlansPricing } from './pages/plans-pricing/PlansPricing';
+import { BillingInvoice } from './pages/billing-invoice/BillingInvoice';
 import './App.css';
 
 // Page Loader Fallback Component
@@ -119,21 +121,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/revenue/pricing',
-        element: (
-          <PagePlaceholder
-            title="Plans & Pricing"
-            subtitle="Configure tier features, unit pricing, and tier limits."
-          />
-        ),
+        element: <PlansPricing />,
       },
       {
         path: '/revenue/invoices',
-        element: (
-          <PagePlaceholder
-            title="Billing & Invoices"
-            subtitle="Customer invoice generation, payment history, and collection status."
-          />
-        ),
+        element: <BillingInvoice />,
       },
       {
         path: '/revenue/discounts',
