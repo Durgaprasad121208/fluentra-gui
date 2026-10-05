@@ -13,6 +13,7 @@ import NotificationProvider from './common/NotificationProvider';
 import { PlatformDashboard } from './pages/PlatformDashboard/PlatformDashboard';
 import { Organisation } from './pages/organisations/Organisation';
 import { Users } from './pages/users/Users';
+import { CustomerActivity } from './pages/customer-activity/CustomerActivity';
 import './App.css';
 
 // Page Loader Fallback Component
@@ -108,12 +109,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/customers/activity',
-        element: (
-          <PagePlaceholder
-            title="Customer Activity"
-            subtitle="Audit trails, session history, and customer interactions."
-          />
-        ),
+        element: <CustomerActivity />,
       },
       // Revenue
       {
