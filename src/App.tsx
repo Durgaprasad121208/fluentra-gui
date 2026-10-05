@@ -14,6 +14,7 @@ import { PlatformDashboard } from './pages/PlatformDashboard/PlatformDashboard';
 import { Organisation } from './pages/organisations/Organisation';
 import { Users } from './pages/users/Users';
 import { CustomerActivity } from './pages/customer-activity/CustomerActivity';
+import { Subscription } from './pages/subscriptions/Subscription';
 import './App.css';
 
 // Page Loader Fallback Component
@@ -114,12 +115,7 @@ const router = createBrowserRouter([
       // Revenue
       {
         path: '/revenue/subscriptions',
-        element: (
-          <PagePlaceholder
-            title="Subscriptions"
-            subtitle="Active subscription tiers, renewals, and customer contracts."
-          />
-        ),
+        element: <Subscription />,
       },
       {
         path: '/revenue/pricing',
