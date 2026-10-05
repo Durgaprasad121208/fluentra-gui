@@ -12,6 +12,7 @@ import { ThemeProvider } from './theme/ThemeContext';
 import NotificationProvider from './common/NotificationProvider';
 import { PlatformDashboard } from './pages/PlatformDashboard/PlatformDashboard';
 import { Organisation } from './pages/organisations/Organisation';
+import { Users } from './pages/users/Users';
 import './App.css';
 
 // Page Loader Fallback Component
@@ -103,12 +104,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/customers/users',
-        element: (
-          <PagePlaceholder
-            title="Customer Users"
-            subtitle="User management, role assignments, and permissions."
-          />
-        ),
+        element: <Users />,
       },
       {
         path: '/customers/activity',
