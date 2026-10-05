@@ -139,14 +139,22 @@ body.dark .org-filter-pill.active {
   background: transparent !important;
 }
 
-.org-data-table .ant-table-thead > tr > th {
+.org-data-table .ant-table-thead > tr > th,
+.org-data-table .ant-table-thead > tr > th.ant-table-cell,
+.org-data-table .ant-table-thead > tr > th .ant-table-column-title,
+.org-data-table .ant-table-thead > tr > th * {
   font-size: 11px !important;
   font-weight: 600 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.05em !important;
-  padding: 10px 14px !important;
-  background: var(--bg-card, #0d171f) !important;
   color: var(--text-secondary, #94a3b8) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.org-data-table .ant-table-thead > tr > th {
+  padding: 8px 14px !important;
+  background: var(--bg-card, #0d171f) !important;
   border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.08)) !important;
   white-space: nowrap !important;
 }
@@ -155,7 +163,20 @@ body.dark .org-filter-pill.active {
   display: none !important;
 }
 
-.org-data-table .ant-table-tbody > tr > td {
+.org-data-table .ant-table-tbody > tr.ant-table-measure-row,
+.org-data-table .ant-table-tbody > tr.ant-table-measure-row > td,
+.org-data-table .ant-table-tbody > tr.ant-table-measure-row > td.ant-table-cell-fix-right,
+.org-data-table .ant-table-tbody > tr.ant-table-measure-row > td.ant-table-cell-fix-left {
+  padding: 0 !important;
+  border: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  visibility: collapse !important;
+}
+
+.org-data-table .ant-table-tbody > tr:not(.ant-table-measure-row) > td {
   padding: 11px 14px !important;
   vertical-align: middle;
   white-space: nowrap !important;

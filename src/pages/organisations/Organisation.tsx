@@ -561,9 +561,6 @@ export const Organisation: React.FC = () => {
                     <h1 className="org-main-heading">
                         Organisations
                     </h1>
-                    <span className="org-subtitle-count">
-                        {organisations.length} tenants on the platform.
-                    </span>
                 </div>
 
                 <SubmitButton
