@@ -178,7 +178,8 @@ body.dark-theme .features-card-badge,
 .features-table .ant-table-thead > tr > th {
   font-size: 11px !important;
   font-weight: 600 !important;
-  text-transform: none;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
   padding: 10px 16px !important;
   background: #fafafa !important;
   color: #64748b !important;

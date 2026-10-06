@@ -184,3 +184,14 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }
+
+/* Global Table Headers Capitalized / Uppercase */
+.ant-table-thead > tr > th,
+.ant-table-thead > tr > th.ant-table-cell,
+.ant-table-thead > tr > th .ant-table-column-title,
+.ant-table-thead > tr > th * {
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+}

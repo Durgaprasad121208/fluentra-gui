@@ -24,6 +24,13 @@ import {
   Receipt,
   Percent,
   Gauge,
+  Flag,
+  Server,
+  HeartPulse,
+  LifeBuoy,
+  Sliders,
+  UserCog,
+  Bell,
   SlidersHorizontal,
   Database,
 } from 'lucide-react';
@@ -225,12 +232,57 @@ export const controlPlaneMenuSections: MenuSection[] = [
       {
         key: '/platform/features',
         label: 'Feature Management',
-        icon: <SlidersHorizontal size={ICON_SIZE} />,
+        icon: <Flag size={ICON_SIZE} />,
       },
       {
         key: '/platform/environments',
         label: 'Environments',
-        icon: <Database size={ICON_SIZE} />,
+        icon: <Server size={ICON_SIZE} />,
+      },
+      {
+        key: '/platform/health',
+        label: 'Platform Health',
+        icon: <HeartPulse size={ICON_SIZE} />,
+      },
+    ],
+  },
+  {
+    title: 'GOVERNANCE',
+    items: [
+      {
+        key: '/governance/support-access',
+        label: 'Support & Access',
+        icon: <LifeBuoy size={ICON_SIZE} />,
+      },
+      {
+        key: '/governance/audit-logs',
+        label: 'Audit Logs',
+        icon: <ScrollText size={ICON_SIZE} />,
+      },
+      {
+        key: '/governance/security-policies',
+        label: 'Security & Policies',
+        icon: <ShieldCheck size={ICON_SIZE} />,
+      },
+    ],
+  },
+  {
+    title: 'SETTINGS',
+    items: [
+      {
+        key: '/settings/platform',
+        label: 'Platform Settings',
+        icon: <Sliders size={ICON_SIZE} />,
+      },
+      {
+        key: '/settings/admin-users',
+        label: 'Admin Users',
+        icon: <UserCog size={ICON_SIZE} />,
+      },
+      {
+        key: '/settings/notifications',
+        label: 'Notifications',
+        icon: <Bell size={ICON_SIZE} />,
       },
     ],
   },

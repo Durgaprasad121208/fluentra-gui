@@ -255,12 +255,6 @@ export const Environment: React.FC = () => {
                             </div>
                         </div>
                     </div>
-
-                    <div className="environments-filter-right">
-                        <span className="environments-count-badge">
-                            {filteredEnvironments.length} of {environments.length}
-                        </span>
-                    </div>
                 </div>
 
                 {/* -------------------------------------------------------------------
