@@ -17,6 +17,10 @@ import { CustomerActivity } from './pages/customer-activity/CustomerActivity';
 import { Subscription } from './pages/subscriptions/Subscription';
 import { PlansPricing } from './pages/plans-pricing/PlansPricing';
 import { BillingInvoice } from './pages/billing-invoice/BillingInvoice';
+import { Coupons } from './pages/coupons-discounts/Coupons';
+import { Usage } from './pages/usage-utilisation/Usage';
+import { Features } from './pages/feature-management/Features';
+import { Environment } from './pages/environments/Environment';
 import './App.css';
 
 // Page Loader Fallback Component
@@ -129,40 +133,20 @@ const router = createBrowserRouter([
       },
       {
         path: '/revenue/discounts',
-        element: (
-          <PagePlaceholder
-            title="Coupons & Discounts"
-            subtitle="Promotional campaign codes, custom discounts, and special pricing."
-          />
-        ),
+        element: <Coupons />,
       },
       // Platform
       {
         path: '/platform/usage',
-        element: (
-          <PagePlaceholder
-            title="Usage & Utilisation"
-            subtitle="Infrastructure compute, database, and network resource tracking."
-          />
-        ),
+        element: <Usage />,
       },
       {
         path: '/platform/features',
-        element: (
-          <PagePlaceholder
-            title="Feature Management"
-            subtitle="Feature flags, rollout rings, and beta enablement."
-          />
-        ),
+        element: <Features />,
       },
       {
         path: '/platform/environments',
-        element: (
-          <PagePlaceholder
-            title="Environments"
-            subtitle="Cluster environments, regions, and deployments."
-          />
-        ),
+        element: <Environment />,
       },
       // Catch-all inside layout for any other navigation paths
       {

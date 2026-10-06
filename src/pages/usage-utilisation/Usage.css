@@ -1,0 +1,207 @@
+/* Usage & Utilisation Page Styles - Dual Dark/Light Mode Theme Support */
+
+.usage-page-root {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding-bottom: 24px;
+}
+
+/* Header Bar */
+.usage-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.usage-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.usage-category-label {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary, #64748b);
+}
+
+.usage-main-heading {
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  color: var(--text-primary, #0f172a);
+  margin: 0 !important;
+}
+
+.usage-subtitle-count {
+  font-size: 12px !important;
+  margin-top: 2px;
+  color: var(--text-secondary, #64748b);
+}
+
+.usage-export-btn {
+  height: 36px !important;
+  padding: 0 16px !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  border-radius: 8px !important;
+  background: var(--bg-card, #0d171f) !important;
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1)) !important;
+  color: var(--text-primary, #f8fafc) !important;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.usage-export-btn:hover {
+  background: var(--bg-hover, #1a2630) !important;
+  border-color: var(--color-primary, #22c55e) !important;
+  color: var(--color-primary, #22c55e) !important;
+}
+
+/* Demo Alert Banner */
+.usage-demo-alert {
+  border-radius: 8px !important;
+  padding: 8px 14px !important;
+}
+
+/* Filter Toolbar */
+.usage-filter-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.usage-search-input {
+  width: 260px;
+  max-width: 280px;
+  min-width: 200px;
+  border-radius: 8px !important;
+  font-size: 12.5px !important;
+}
+
+.usage-search-input .ant-input {
+  font-size: 12.5px !important;
+}
+
+/* Main Table Container Card */
+.usage-table-card {
+  border-radius: 12px !important;
+  overflow: hidden;
+  background: var(--bg-card, #0d171f) !important;
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08)) !important;
+}
+
+.usage-table-card .ant-card-body {
+  padding: 0 !important;
+}
+
+/* Table Styling */
+.usage-data-table .ant-table {
+  font-size: 12.5px !important;
+  background: transparent !important;
+}
+
+.usage-data-table .ant-table-container {
+  background: transparent !important;
+}
+
+.usage-data-table .ant-table-thead > tr > th,
+.usage-data-table .ant-table-thead > tr > th.ant-table-cell,
+.usage-data-table .ant-table-thead > tr > th .ant-table-column-title,
+.usage-data-table .ant-table-thead > tr > th * {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: var(--text-secondary, #94a3b8) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.usage-data-table .ant-table-thead > tr > th {
+  padding: 10px 16px !important;
+  background: var(--bg-card, #0d171f) !important;
+  border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.08)) !important;
+  white-space: nowrap !important;
+}
+
+.usage-data-table .ant-table-thead > tr > th::before {
+  display: none !important;
+}
+
+/* Collapse Ant Design internal measure row to eliminate gaps */
+.usage-data-table .ant-table-tbody > tr.ant-table-measure-row,
+.usage-data-table .ant-table-tbody > tr.ant-table-measure-row > td,
+.usage-data-table .ant-table-tbody > tr.ant-table-measure-row > td.ant-table-cell-fix-right,
+.usage-data-table .ant-table-tbody > tr.ant-table-measure-row > td.ant-table-cell-fix-left {
+  padding: 0 !important;
+  border: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  visibility: collapse !important;
+}
+
+.usage-data-table .ant-table-tbody > tr:not(.ant-table-measure-row) > td {
+  padding: 12px 16px !important;
+  vertical-align: middle;
+  white-space: nowrap !important;
+  background: var(--bg-card, #0d171f);
+  border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.06)) !important;
+  color: var(--text-primary, #f8fafc);
+}
+
+.usage-data-table .ant-table-tbody > tr:hover > td,
+.usage-data-table .ant-table-tbody > tr.ant-table-row-hover > td {
+  background: var(--bg-hover, #1a2630) !important;
+}
+
+/* Cell Typography */
+.usage-org-text {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: var(--text-primary, #f8fafc);
+}
+
+.usage-credits-text {
+  font-size: 12.5px !important;
+  color: var(--text-primary, #f8fafc);
+}
+
+.usage-exec-text {
+  font-size: 12.5px !important;
+  color: var(--text-primary, #f8fafc);
+}
+
+.usage-storage-text {
+  font-size: 12.5px !important;
+  color: var(--text-primary, #f8fafc);
+}
+
+.usage-percent-text {
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  color: var(--text-primary, #f8fafc);
+}
+
+/* Standalone Bottom Pagination */
+.usage-pagination-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 8px 0 16px 0;
+  width: 100%;
+}
