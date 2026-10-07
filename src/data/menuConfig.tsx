@@ -305,11 +305,11 @@ const CONTROL_PLANE_ROLES = [
  * Returns the relevant menu sections according to the active user role.
  */
 export const getMenuSectionsForRole = (role?: string): MenuSection[] => {
-  if (!role) return controlPlaneMenuSections;
+  if (!role) return clientPortalMenuSections;
   const normalized = role.toLowerCase();
   const isControlPlane = CONTROL_PLANE_ROLES.some((r) => normalized.includes(r));
   return isControlPlane ? controlPlaneMenuSections : clientPortalMenuSections;
 };
 
-// Default export for backward compatibility
-export const menuSections: MenuSection[] = controlPlaneMenuSections;
+// Default export for backward compatibility - Developer Client Portal
+export const menuSections: MenuSection[] = clientPortalMenuSections;

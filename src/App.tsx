@@ -27,6 +27,7 @@ import { Security } from './pages/security-policies/Security';
 import { PlatformSettings } from './pages/platform-settings/PlatformSettings';
 import { AdminUsers } from './pages/admin-users/AdminUsers';
 import { Notification } from './pages/admin-notifications/Notification';
+import { Overview } from './pages/over-view/Overview';
 import './App.css';
 
 // Page Loader Fallback Component
@@ -102,11 +103,15 @@ function AppLayoutWrapper() {
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Navigate to="/dashboard" replace />,
+    element: <Navigate to="/workspace/overview" replace />,
   },
   {
     element: <AppLayoutWrapper />,
     children: [
+      {
+        path: '/workspace/overview',
+        element: <Overview />,
+      },
       {
         path: '/dashboard',
         element: <PlatformDashboard />,
