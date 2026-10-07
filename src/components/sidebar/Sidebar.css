@@ -92,13 +92,19 @@
   overflow-x: hidden;
   padding: 8px 0;
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
   background: var(--sidebar-bg, #04080c);
 }
 
-/* Custom Sleek Scrollbar */
+/* Custom Sleek Capsule Scrollbar */
 .sider-menu-container::-webkit-scrollbar {
-  width: 4px;
+  width: 5px;
+}
+
+.sider-menu-container::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 .sider-menu-container::-webkit-scrollbar-track {
@@ -106,12 +112,13 @@
 }
 
 .sider-menu-container::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  transition: background 0.2s ease;
 }
 
 .sider-menu-container::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.35);
 }
 
 /* Section Header */

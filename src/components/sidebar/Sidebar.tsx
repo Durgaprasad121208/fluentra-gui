@@ -25,15 +25,15 @@ export interface SidebarProps {
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({
-  activeKey = '/dashboard',
+  activeKey = '/workspace/overview',
   onSelectKey,
   width = 240,
   collapsedWidth = 72,
   collapsed = false,
   collapsible = true,
-  userRole = 'SUPER ADMIN',
+  userRole = 'DEVELOPER',
   onSwitchPortal,
-  portalSwitchLabel = 'Switch to Client Portal',
+  portalSwitchLabel = 'Switch to Super Admin',
 }) => {
   const isCollapsed = collapsed;
   const [selectedKey, setSelectedKey] = useState<string>(activeKey);

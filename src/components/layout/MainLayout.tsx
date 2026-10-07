@@ -71,8 +71,28 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
     }
   };
 
-  const activeUserRole = propUserRole || localStorage.getItem('userRole') || 'SUPER ADMIN';
-  const activeUserInitials = propUserInitials || localStorage.getItem('userInitials') || 'PK';
+  const [currentRole, setCurrentRole] = useState<string>(
+    () => propUserRole || localStorage.getItem('userRole') || 'DEVELOPER'
+  );
+
+  const activeUserRole = propUserRole || currentRole;
+  const isControlPlaneRole = activeUserRole.toLowerCase().includes('admin');
+  const activeUserInitials = propUserInitials || (isControlPlaneRole ? 'PK' : 'DM');
+
+  const handlePortalSwitch = () => {
+    if (onSwitchPortal) {
+      onSwitchPortal();
+      return;
+    }
+    const nextRole = isControlPlaneRole ? 'DEVELOPER' : 'SUPER ADMIN';
+    setCurrentRole(nextRole);
+    localStorage.setItem('userRole', nextRole);
+    if (nextRole === 'DEVELOPER') {
+      handleNavigation('/workspace/overview');
+    } else {
+      handleNavigation('/dashboard');
+    }
+  };
 
   return (
     <Layout className="fl-app-frame">
@@ -83,7 +103,8 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
         collapsed={isCollapsed}
         collapsible={collapsible}
         userRole={activeUserRole}
-        onSwitchPortal={onSwitchPortal}
+        onSwitchPortal={handlePortalSwitch}
+        portalSwitchLabel={isControlPlaneRole ? 'Switch to Developer Portal' : 'Switch to Super Admin'}
       />
 
       {/* Main Workspace Frame */}
