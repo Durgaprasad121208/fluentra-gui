@@ -23,6 +23,10 @@ import { Features } from './pages/feature-management/Features';
 import { Environment } from './pages/environments/Environment';
 import { Support } from './pages/support-access/Support';
 import { AuditLog } from './pages/audit-logs/AuditLog';
+import { Security } from './pages/security-policies/Security';
+import { PlatformSettings } from './pages/platform-settings/PlatformSettings';
+import { AdminUsers } from './pages/admin-users/AdminUsers';
+import { Notification } from './pages/admin-notifications/Notification';
 import './App.css';
 
 // Page Loader Fallback Component
@@ -170,40 +174,20 @@ const router = createBrowserRouter([
       },
       {
         path: '/governance/security-policies',
-        element: (
-          <PagePlaceholder
-            title="Security & Policies"
-            subtitle="Access control policies, compliance requirements, and MFA enforcement."
-          />
-        ),
+        element: <Security />,
       },
       // Settings
       {
         path: '/settings/platform',
-        element: (
-          <PagePlaceholder
-            title="Platform Settings"
-            subtitle="Global tenant configuration, domain settings, and SMTP credentials."
-          />
-        ),
+        element: <PlatformSettings />,
       },
       {
         path: '/settings/admin-users',
-        element: (
-          <PagePlaceholder
-            title="Admin Users"
-            subtitle="Internal staff management, roles, and administrative permissions."
-          />
-        ),
+        element: <AdminUsers />,
       },
       {
         path: '/settings/notifications',
-        element: (
-          <PagePlaceholder
-            title="Notifications"
-            subtitle="Email templates, webhook endpoints, and alert channels."
-          />
-        ),
+        element: <Notification />,
       },
       // Catch-all inside layout for any other navigation paths
       {
