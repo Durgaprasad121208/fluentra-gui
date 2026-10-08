@@ -28,6 +28,10 @@ import { PlatformSettings } from './pages/platform-settings/PlatformSettings';
 import { AdminUsers } from './pages/admin-users/AdminUsers';
 import { Notification } from './pages/admin-notifications/Notification';
 import { Overview } from './pages/over-view/Overview';
+import { Approval } from './pages/approvals/Approval';
+import { Version } from './pages/version-changes/Version';
+import { Logs } from './pages/logs/Logs';
+import { Execution } from './pages/executions/Execution';
 import './App.css';
 
 // Page Loader Fallback Component
@@ -168,7 +172,24 @@ const router = createBrowserRouter([
           />
         ),
       },
+      // Runtime
+      {
+        path: '/runtime/executions',
+        element: <Execution />,
+      },
+      {
+        path: '/runtime/logs',
+        element: <Logs />,
+      },
       // Governance
+      {
+        path: '/governance/versions',
+        element: <Version />,
+      },
+      {
+        path: '/governance/approvals',
+        element: <Approval />,
+      },
       {
         path: '/governance/support-access',
         element: <Support />,
