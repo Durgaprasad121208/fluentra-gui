@@ -28,10 +28,13 @@ import { PlatformSettings } from './pages/platform-settings/PlatformSettings';
 import { AdminUsers } from './pages/admin-users/AdminUsers';
 import { Notification } from './pages/admin-notifications/Notification';
 import { Overview } from './pages/over-view/Overview';
+import { Project } from './pages/projects/Project';
+import { ProjectInfo } from './pages/projects/project-info/ProjectInfo';
 import { Approval } from './pages/approvals/Approval';
 import { Version } from './pages/version-changes/Version';
 import { Logs } from './pages/logs/Logs';
 import { Execution } from './pages/executions/Execution';
+import { Requirement } from './pages/requirements/Requirement';
 import './App.css';
 
 // Page Loader Fallback Component
@@ -115,6 +118,26 @@ const router = createBrowserRouter([
       {
         path: '/workspace/overview',
         element: <Overview />,
+      },
+      {
+        path: '/workspace/projects',
+        element: <Project />,
+      },
+      {
+        path: '/workspace/projects/:projectId',
+        element: <ProjectInfo />,
+      },
+      {
+        path: '/workspace/projects/info',
+        element: <ProjectInfo />,
+      },
+      {
+        path: '/engineering/requirements',
+        element: <Requirement />,
+      },
+      {
+        path: '/workspace/requirements',
+        element: <Requirement />,
       },
       {
         path: '/dashboard',

@@ -1,0 +1,283 @@
+/* Requirement.css - Requirements Engineering Dashboard Shell */
+
+.req-page-root {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+/* ==========================================================================
+   1. HEADER & COMMON TABS
+   ========================================================================== */
+.req-header-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.req-project-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary, #64748b);
+  margin: 0;
+  font-weight: 500;
+}
+
+body.dark-theme .req-project-subtitle,
+[data-theme="dark"] .req-project-subtitle {
+  color: #8898aa;
+}
+
+.req-header-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.req-title-cluster {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.req-page-title {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: var(--text-primary, #0f172a);
+  margin: 0 !important;
+  letter-spacing: -0.02em;
+}
+
+body.dark-theme .req-page-title,
+[data-theme="dark"] .req-page-title {
+  color: #f8fafc !important;
+}
+
+.req-badge-brd {
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  font-family: var(--font-family-code, monospace);
+  letter-spacing: 0.02em;
+}
+
+body.dark-theme .req-badge-brd,
+[data-theme="dark"] .req-badge-brd {
+  color: #94a3b8;
+}
+
+.req-action-btn-plan {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 8px;
+  background: #475569;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.req-action-btn-plan:hover {
+  background: #334155;
+}
+
+body.dark-theme .req-action-btn-plan,
+[data-theme="dark"] .req-action-btn-plan {
+  background: #334155;
+  color: #f8fafc;
+}
+
+body.dark-theme .req-action-btn-plan:hover,
+[data-theme="dark"] .req-action-btn-plan:hover {
+  background: #1e293b;
+}
+
+/* Tabs Navigation */
+.req-nav-tabs {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0;
+  margin-top: 4px;
+}
+
+body.dark-theme .req-nav-tabs,
+[data-theme="dark"] .req-nav-tabs {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.req-nav-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+  padding: 8px 4px 10px 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.req-nav-tab-btn:hover {
+  color: #0f172a;
+}
+
+body.dark-theme .req-nav-tab-btn,
+[data-theme="dark"] .req-nav-tab-btn {
+  color: #8898aa;
+}
+
+body.dark-theme .req-nav-tab-btn:hover,
+[data-theme="dark"] .req-nav-tab-btn:hover {
+  color: #ffffff;
+}
+
+.req-nav-tab-btn.active {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+body.dark-theme .req-nav-tab-btn.active,
+[data-theme="dark"] .req-nav-tab-btn.active {
+  color: #ffffff;
+}
+
+.req-nav-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #38bdf8;
+  border-radius: 2px 2px 0 0;
+}
+
+body.dark-theme .req-nav-tab-btn.active::after,
+[data-theme="dark"] .req-nav-tab-btn.active::after {
+  background: #38bdf8;
+}
+
+/* Common Status Pills */
+.req-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2.5px 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.req-status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Status: Approved (Green) */
+.req-status-pill.status-approved {
+  background: #e8f8e7;
+  border: 1px solid #99e69c;
+  color: #217326;
+}
+.req-status-pill.status-approved .req-status-dot {
+  background: #217326;
+}
+
+body.dark-theme .req-status-pill.status-approved,
+[data-theme="dark"] .req-status-pill.status-approved {
+  background: #0d2812;
+  border: 1px solid #22c55e;
+  color: #4ade80;
+}
+body.dark-theme .req-status-pill.status-approved .req-status-dot,
+[data-theme="dark"] .req-status-pill.status-approved .req-status-dot {
+  background: #4ade80;
+}
+
+/* Status: In Review (Blue) */
+.req-status-pill.status-in-review {
+  background: #e7f3fe;
+  border: 1px solid #a3d4fc;
+  color: #0070c0;
+}
+.req-status-pill.status-in-review .req-status-dot {
+  background: #0070c0;
+}
+
+body.dark-theme .req-status-pill.status-in-review,
+[data-theme="dark"] .req-status-pill.status-in-review {
+  background: #08233e;
+  border: 1px solid #0284c7;
+  color: #38bdf8;
+}
+body.dark-theme .req-status-pill.status-in-review .req-status-dot,
+[data-theme="dark"] .req-status-pill.status-in-review .req-status-dot {
+  background: #38bdf8;
+}
+
+/* Status: Rejected (Red) */
+.req-status-pill.status-rejected {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #dc2626;
+}
+.req-status-pill.status-rejected .req-status-dot {
+  background: #dc2626;
+}
+
+body.dark-theme .req-status-pill.status-rejected,
+[data-theme="dark"] .req-status-pill.status-rejected {
+  background: #2d0e12;
+  border: 1px solid #ef4444;
+  color: #f87171;
+}
+body.dark-theme .req-status-pill.status-rejected .req-status-dot,
+[data-theme="dark"] .req-status-pill.status-rejected .req-status-dot {
+  background: #f87171;
+}
+
+/* Status: Draft / Superseded (Grey) */
+.req-status-pill.status-draft {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+}
+.req-status-pill.status-draft .req-status-dot {
+  background: #94a3b8;
+}
+
+body.dark-theme .req-status-pill.status-draft,
+[data-theme="dark"] .req-status-pill.status-draft {
+  background: #141c28;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+}
+body.dark-theme .req-status-pill.status-draft .req-status-dot,
+[data-theme="dark"] .req-status-pill.status-draft .req-status-dot {
+  background: #64748b;
+}
+
+/* Content Area */
+.req-tab-content-area {
+  width: 100%;
+}

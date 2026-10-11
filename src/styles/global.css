@@ -212,3 +212,25 @@ body.light-theme ::-webkit-scrollbar-thumb:hover,
   font-size: 11px !important;
   font-weight: 600 !important;
 }
+
+/* Global Navigation Tabs & Tab Buttons - Standard Small Font Size (12px) */
+.req-nav-tab-btn,
+.versions-tab-btn,
+.features-nav-pill,
+.users-filter-pill,
+.support-filter-pill,
+.security-filter-pill,
+.sub-filter-pill,
+.org-filter-pill,
+.pricing-filter-pill,
+.invoice-filter-pill,
+.audit-filter-pill,
+.coupons-filter-pill,
+.env-filter-pill,
+.ant-tabs-tab,
+.ant-tabs-tab-btn,
+[class*="-nav-tab-btn"],
+[class*="-filter-pill"] {
+  font-size: 12px !important;
+}
+

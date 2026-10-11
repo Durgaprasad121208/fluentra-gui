@@ -203,7 +203,14 @@ body.dark-theme .logs-table .ant-table,
   color: #f8fafc;
 }
 
-/* Header Cells */
+/* Header Cells: No wrap */
+.logs-table .ant-table-thead > tr > th,
+.logs-table .ant-table-thead > tr > th.ant-table-cell,
+.logs-table .ant-table-thead > tr > th .ant-table-column-title,
+.logs-table .ant-table-thead > tr > th * {
+  white-space: nowrap !important;
+}
+
 .logs-table .ant-table-thead > tr > th {
   background: #f8fafc !important;
   color: var(--text-secondary, #64748b) !important;
@@ -211,6 +218,7 @@ body.dark-theme .logs-table .ant-table,
   font-weight: 600 !important;
   border-bottom: 1px solid #e2e8f0 !important;
   padding: 10px 14px !important;
+  white-space: nowrap !important;
 }
 
 body.dark-theme .logs-table .ant-table-thead > tr > th,
@@ -220,12 +228,14 @@ body.dark-theme .logs-table .ant-table-thead > tr > th,
   border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
 }
 
-/* Body Rows & Cells */
-.logs-table .ant-table-tbody > tr > td {
+/* Body Rows & Cells: No wrap */
+.logs-table .ant-table-tbody > tr > td,
+.logs-table .ant-table-tbody > tr > td.ant-table-cell {
   border-bottom: 1px solid #f1f5f9 !important;
   padding: 8px 14px !important;
   font-size: 12.5px;
   transition: background 0.15s ease;
+  white-space: nowrap !important;
 }
 
 body.dark-theme .logs-table .ant-table-tbody > tr > td,
@@ -301,6 +311,7 @@ body.dark-theme .log-execution-link,
 .log-message {
   font-size: 12.5px;
   color: var(--text-primary, #0f172a);
+  white-space: nowrap !important;
 }
 
 body.dark-theme .log-message,

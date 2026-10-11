@@ -349,6 +349,7 @@ export const Logs: React.FC = () => {
           size="small"
           pagination={false}
           className="logs-table"
+          scroll={{ x: 'max-content' }}
           expandable={{
             expandedRowRender: (record) => (
               <div className="log-expanded-container">
